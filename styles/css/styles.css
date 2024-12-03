@@ -36,15 +36,15 @@
 /* ========== Custom Fonts ========== */
 @font-face {
     font-family: arabic;
-    src: url(/styles/css/fonts/ArbFONTS-DG-Heaven-Light.ttf);
+    src: url(fonts/ArbFONTS-DG-Heaven-Light.ttf);
 }
 @font-face {
     font-family: Thin;
-    src: url(/styles/css/fonts/DG-Heaven-Light.ttf);
+    src: url(fonts/DG-Heaven-Light.ttf);
 }
 @font-face {
     font-family: primary;
-    src: url(/styles/css/fonts/starryeyed.ttf);
+    src: url(fonts/starryeyed.ttf);
 }
 
 /* =========== Language Options ========== */
@@ -88,26 +88,26 @@
 
 /* ========== Background panels ========== */
 .hero{
-    background-image:url(/styles/img/icons/top-section.png);
+    background-image:url(../img/icons/top-section.png);
     background-repeat: no-repeat;
     background-size: cover;
     /* height: 119vh; */
     padding: 0% 8%;
 }
 .service{
-    background-image:url(/styles/img/icons/middle-section-1.png);
+    background-image:url(../img/icons/middle-section-1.png);
     background-repeat: no-repeat;
     background-size: cover;
     /* height: 100vh; */
 }
 .carusel{
-    background-image:url(/styles/img/icons/middle-section-3.png);
+    background-image:url(../img/icons/middle-section-3.png);
     background-repeat: no-repeat;
     background-size: cover;
     /* height: 109vh; */
 }
 .footer{
-    background-image:url(/styles/img/icons/bottom-section.png);
+    background-image:url(../img/icons/bottom-section.png);
     background-repeat: no-repeat;
     background-size: cover;
     /* height: 30vh; */
@@ -182,13 +182,13 @@ header h4{
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow effect */
 }
 .apple-btn {
-    background-image: url(/styles/img/icons/apple-brands-solid-xl.svg);
+    background-image: url(../img/icons/apple-brands-solid-xl.svg);
 }
 .google-btn {
-    background-image: url(/styles/img/icons/google-play-brands-solid.svg);
+    background-image: url(../img/icons/google-play-brands-solid.svg);
 }
 .huawie-btn {
-    background-image:url(/styles/img/icons/HUAWEI_AppGallery-OsIxn9tUU_brandlogos.net.svg)
+    background-image:url(../img/icons/HUAWEI_AppGallery-OsIxn9tUU_brandlogos.net.svg)
 }
 .config{
     margin-top: 1rem;
@@ -343,7 +343,7 @@ img.lang{
 }
 
 .h-name-eng{
-    background-image: url(/styles/img/lang_img/en/h-name-eng.png);
+    background-image: url(../img/lang_img/en/h-name-eng.png);
     width: 15rem;
     height: 2.38rem;
     margin: 1rem auto;
