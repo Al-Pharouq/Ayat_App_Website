@@ -59,10 +59,10 @@ async function fetchLanguageData(lang) {
   var stylesheet = document.getElementById('theme-stylesheet');
       
   if (lang === 'ur') {
-    stylesheet.href = '../styles/css/style-ur.css';  
+    stylesheet.href = 'styles/css/style-ur.css';  
     document.documentElement.lang = 'ur'; 
   } else {
-    stylesheet.href = '../styles/css/styles.css';  
+    stylesheet.href = 'styles/css/styles.css';  
   }
   languageSelect.value =lang;
   const htmlElement = document.documentElement;
