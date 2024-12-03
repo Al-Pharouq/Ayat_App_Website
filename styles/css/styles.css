@@ -24,9 +24,9 @@
 .custom-select {
     width: 150px; /* Adjust the width as needed */
     padding: 10px; /* Add padding for better appearance */
-    border: 1px solid #ccc; /* Border color */
+    /* border: 1px solid #ccc; Border color */
     border-radius: 5px; /* Rounded corners */
-    background-color: #f8f9fa; /* Light background color */
+    background-color: #ab9a52;
     font-size: 16px; /* Font size */
     color: #333; /* Text color */
     font-family: arabic;
@@ -37,13 +37,13 @@
     background-size: 12px; /* Size of the dropdown arrow */
     cursor: pointer; /* Change cursor on hover */
     direction: rtl;
-    color: #62656b;
+    color: #ffffff;
     text-align: center;
     font-family: thin, urdu;
     font-size: 11px;
     margin: 5px 0px 0px 0px;
     line-height: 19px;
-
+    
 }
 
 .custom-select:hover {
