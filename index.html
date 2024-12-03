@@ -15,15 +15,22 @@
     <script src="https://kit.fontawesome.com/65076b0310.js" crossorigin="anonymous"></script>
 
     <!-- ----------------------- Externel CSS ------------------- -->
-    <link rel="stylesheet" href="/styles/css/styles.css" />
+    <link id="theme-stylesheet" rel="stylesheet" href="/styles/css/styles.css" />
     <!-- ----------------------- Favicon ------------------- -->
     <link rel="shortcut icon" href="/styles/img/icons/favicon.ico" type="image/x-icon">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@300&family=Noto+Kufi+Arabic:wght@900&family=Patrick+Hand&family=Ubuntu:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
     <!-- ----------------------- Header ------------------- -->
      <header class="hero">
         <div class="row">
-          <div class="lang_pos">
+          <div dir="auto class="lang_pos">
             <select id="language-toggle" class="custom-select">
                 <option value="en">English</option>
                 <option value="fr">Français</option>
@@ -32,27 +39,27 @@
                 <option value="ar">العربية</option>
               </select>
             </div>
-          <div dir="ltr" class="col">
-              <img class="logo_app" src="/styles/img/icons/logo-ltr.png"  alt="logo" />
+          <div  class="col">
+              <img data-i18n="logo" class="logo_app" src="/styles/img/icons/logo-ltr.png"  alt="logo" />
           </div>
-          <div dir="rtl" class="col">
+          <div class="col">
               <img class="logo_org" src="/styles/img/icons/logo-2.png" alt="logo" />
           </div>
         </div>
         <div class="row">
             <div class="col">
-                <div dir="ltr" class="row-cols-auto">
-                    <div dir="ltr" class="col-12">
+                <div  class="row-cols-auto">
+                    <div  class="col-12">
                         <h1 data-i18n="six_manuscripts"></h1>
                     </div>
-                    <div dir="lte" class="col-12">
+                    <div  class="col-12">
                         <h2 data-i18n="app_desc"></h2>
                     </div>
-                    <div dir="rtl" class="col-12  head-3-text">
+                    <div  class="col-12  head-3-text">
                         <h4 data-i18n="dedication"></h4>
-                        <img dir="rtl" class="gift" src="/styles/img/icons/gifting.png" alt="">
+                        <img  class="gift" src="/styles/img/icons/gifting.png" alt="">
                     </div>
-                    <div dir="ltr" class="container config text-center">
+                    <div  class="container config text-center">
                      <!-- App Store button -->
                      <a href="https://apps.apple.com/us/app/%D9%85%D8%B5%D8%AD%D9%81-%D8%A2%D9%8A%D8%A7%D8%AA/id1466412876" target="_blank" class="market-btn apple-btn" role="button">
                         <span class="market-button-subtitle">Download on</span>

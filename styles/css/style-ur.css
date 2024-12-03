@@ -1,15 +1,17 @@
-/* ========== Custom Fonts ========== */
+body{margin: 0px 0.1px;
+}
+
 @font-face {
-    font-family: arabic;
-    src: url(/styles/css/fonts/ArbFONTS-DG-Heaven-Light.ttf);
+    font-family: urdu;
+    src: url(fonts/Gandhara-Suls-Regular.ttf);
 }
 @font-face {
     font-family: Thin;
-    src: url(/styles/css/fonts/DG-Heaven-Light.ttf);
+    src: url(fonts/Gandhara-Suls-Regular.ttf);
 }
 @font-face {
     font-family: primary;
-    src: url(/styles/css/fonts/starryeyed.ttf);
+    src: url(fonts/starryeyed.ttf);
 }
 
 /* =========== Language Options ========== */
@@ -29,7 +31,7 @@
     background-color: #f8f9fa; /* Light background color */
     font-size: 16px; /* Font size */
     color: #333; /* Text color */
-    font-family: arabic;
+    font-family: urdu;
     appearance: none; /* Remove default arrow */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 5.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 .5.5v.5h-13v-.5z"/><path fill-rule="evenodd" d="M4.5 8l3 3 3-3H4.5z"/></svg>'); /* Custom dropdown arrow */
     background-repeat: no-repeat; /* Prevent background image from repeating */
@@ -43,7 +45,6 @@
     font-size: 11px;
     margin: 5px 0px 0px 0px;
     line-height: 19px;
-
 }
 
 .custom-select:hover {
@@ -101,21 +102,21 @@
 }
 
 header h1{
-    font-family: primary, arabic;
+    font-family: urdu;
     color: rgb(196, 223, 155);
     font-size: 2.5rem;
 }
 
 header h2{
-    font-family: primary, arabic;
+    font-family: urdu;
     color: #fff;
     font-size: 170%;
-    line-height: 1.2;
+    line-height: 1.9;
     padding: 2rem 0;
 }
 
 header h4{
-    font-family: primary, arabic;
+    font-family: urdu;
     color: rgb(196, 223, 155);
     font-size: 1.5rem;
     margin-right: 4%;
@@ -171,7 +172,7 @@ header h4{
         margin-top: 0.5rem; 
     }
     header h1{
-        font-family: primary, arabic;
+        font-family: urdu;
         color: rgb(196, 223, 155);
         font-size: 2rem;
         margin-top: 3rem;
@@ -181,14 +182,14 @@ header h4{
         margin-top: 3rem;
     } */
     header h2{
-        font-family: primary, arabic;
+        font-family: urdu;
         color: #fff;
         font-size: 118%;
         line-height: 1.2;
         padding-top: 1rem;
     }
     header h4{
-        font-family: primary, arabic;
+        font-family:urdu;
         color: rgb(196, 223, 155);
         font-size: 1rem;
         margin: 0rem;
@@ -248,10 +249,12 @@ header h4{
     direction: rtl;
     color: #62656b;
     text-align: center;
-    font-family: thin, primary;
+    font-family: thin, urdu;
     font-size: 11px;
     margin: 5px 0px 0px 0px;
+    line-height: 19px;
 }
+
 .button {
     background-color: rgb(81, 136, 135);
     box-shadow: inset 0px 10px 30px 0px rgba(0, 0, 0, 0.25);
@@ -262,7 +265,7 @@ header h4{
     margin: 6px 19px 0px 0px;
 }
 .co-button{
-    font-family: Thin, primary;
+    font-family: Thin, urdu;
     color: #fff;
     text-align: center;
     line-height: 26px
@@ -280,7 +283,7 @@ img.lang{
 
 .lang {
     color: rgb(171, 154, 82);
-    font-family: primary, arabic;
+    font-family: urdu;
     text-decoration: none;
     padding: 0rem 1rem;
     font-size: 1.5rem;
@@ -353,7 +356,7 @@ img.pho-icon{
     margin-top: 4.5rem;
 }
 .bottom{
-    font-family: primary, arabic; 
+    font-family: urdu; 
     padding:  1rem;
     font-weight: bold;
     color: #fff;
