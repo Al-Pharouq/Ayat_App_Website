@@ -2,6 +2,15 @@
 const languageSelect = document.getElementById('language-toggle');
 const title = document.getElementById('title');
 
+window.addEventListener("DOMContentLoaded", async () => {
+  // Get the user's preferred language from the browser
+  const browserLanguage = navigator.language || navigator.userLanguage; // Get the browser's language
+  const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'ar'); // Default to Arabic if no preference is found
+  const langData = await fetchLanguageData(userPreferredLanguage);
+  updateContent(langData);
+  toggleArabicStylesheet(userPreferredLanguage);
+});
+
 // Function to fetch language data
 async function fetchLanguageData(lang) {
   // const response = await fetch('assets/js/en.json');
