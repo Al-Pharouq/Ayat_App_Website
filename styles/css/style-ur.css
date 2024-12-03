@@ -49,10 +49,10 @@ body{margin: 0px 0.1px;
 }
 
 /* =========== Language Options ========== */
-.lang_pos{
+/* .lang_pos{
     position: absolute;
     margin: 0.5rem 1rem 0rem 1rem;
-}
+} */
 .lang:hover{
     color: #fff;
 }
