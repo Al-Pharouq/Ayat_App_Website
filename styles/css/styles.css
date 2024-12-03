@@ -1,0 +1,349 @@
+/* ========== Custom Fonts ========== */
+@font-face {
+    font-family: arabic;
+    src: url(/styles/css/fonts/ArbFONTS-DG-Heaven-Light.ttf);
+}
+@font-face {
+    font-family: Thin;
+    src: url(/styles/css/fonts/DG-Heaven-Light.ttf);
+}
+@font-face {
+    font-family: primary;
+    src: url(/styles/css/fonts/starryeyed.ttf);
+}
+
+/* =========== Language Options ========== */
+.lang_pos{
+    position: absolute;
+    margin: 0.5rem 1rem 0rem 1rem;
+}
+.lang:hover{
+    color: #fff;
+}
+
+.custom-select {
+    width: 150px; /* Adjust the width as needed */
+    padding: 10px; /* Add padding for better appearance */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f8f9fa; /* Light background color */
+    font-size: 16px; /* Font size */
+    color: #333; /* Text color */
+    font-family: arabic;
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 5.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 .5.5v.5h-13v-.5z"/><path fill-rule="evenodd" d="M4.5 8l3 3 3-3H4.5z"/></svg>'); /* Custom dropdown arrow */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-position: right 10px center; /* Position the dropdown arrow */
+    background-size: 12px; /* Size of the dropdown arrow */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.custom-select:hover {
+    border-color: rgb(171, 154, 82); /* Change border color on hover */
+}
+
+
+/* ========== Background panels ========== */
+.hero{
+    background-image:url(/styles/img/icons/top-section.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 119vh; */
+    padding: 0% 8%;
+}
+.service{
+    background-image:url(/styles/img/icons/middle-section-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100vh; */
+}
+.carusel{
+    background-image:url(/styles/img/icons/middle-section-3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 109vh; */
+}
+.footer{
+    background-image:url(/styles/img/icons/bottom-section.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 30vh; */
+    margin-top: -1px;
+}
+
+/* ========== Hero Section ========== */
+
+.logo_app{
+    width: 35%;
+    margin-top: 4rem;
+}
+
+.logo_org{
+    width: 25%;
+    margin-top: 0.5rem;
+}
+
+.hero_img{
+    width: 24rem;
+    padding-top: 2rem;
+}
+
+header h1{
+    font-family: primary, arabic;
+    color: rgb(196, 223, 155);
+    font-size: 2.5rem;
+}
+
+header h2{
+    font-family: primary, arabic;
+    color: #fff;
+    font-size: 170%;
+    line-height: 1.2;
+    padding: 2rem 0;
+}
+
+header h4{
+    font-family: primary, arabic;
+    color: rgb(196, 223, 155);
+    font-size: 1.5rem;
+    margin-right: 4%;
+}
+
+.market-btn {
+    display: inline-block;
+    padding: 0.3125rem 0.875rem;
+    padding-left: 2.8125rem;
+    background-position: center left 0.75rem;
+    background-color: rgb(171, 154, 82);
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.market-button-title {
+    color: #222;
+    font-size: 1.125rem;
+}
+.market-button-subtitle {
+    display: block;
+    margin-bottom: -0.25rem;
+    color: #000000;
+    font-size: 0.75rem;
+}
+.market-btn:hover {
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+.apple-btn {
+    background-image: url(/styles/img/icons/apple-brands-solid-xl.svg);
+}
+.google-btn {
+    background-image: url(/styles/img/icons/google-play-brands-solid.svg);
+}
+.huawie-btn {
+    background-image:url(/styles/img/icons/HUAWEI_AppGallery-OsIxn9tUU_brandlogos.net.svg)
+}
+.config{
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+
+@media screen and (max-width: 650px) {
+    .logo_app{
+        width: 9rem;
+        margin-top: 4rem;
+    }
+    .logo_org{
+        width: 5rem;
+        margin-top: 0.5rem; 
+    }
+    header h1{
+        font-family: primary, arabic;
+        color: rgb(196, 223, 155);
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+    /* div.row-cols-12{
+        margin-left: 0rem;
+        margin-top: 3rem;
+    } */
+    header h2{
+        font-family: primary, arabic;
+        color: #fff;
+        font-size: 118%;
+        line-height: 1.2;
+        padding-top: 1rem;
+    }
+    header h4{
+        font-family: primary, arabic;
+        color: rgb(196, 223, 155);
+        font-size: 1rem;
+        margin: 0rem;
+    }
+    .gift{
+        margin-left: 0rem;
+        width: 15rem;
+        padding-top: 0.5rem;
+    }
+    .config{
+        margin-top: 1rem;
+        margin-bottom: 5rem;
+    }
+    .market-btn {
+        background-size: 1rem 1rem;
+        padding-left: 2.5rem;
+        padding-top: 0px;
+        margin-bottom: 9px;
+    }
+    .market-button-title{
+        font-size: 16px;
+    }
+    .market-button-subtitle {
+        font-size: 12px;
+    }
+}
+
+/* ============ Services ========== */
+
+
+.content{
+    margin: -176px 0px 0px 0px;
+    width: 165px;
+}
+.Rectangle {
+    background-color: rgb(81, 136, 135);
+    position: relative;
+    width: 7px;
+    height: 25px;
+    /* margin: 27px 0px 0px 174px; */
+    margin: 26px -15px 0px 0px;
+    z-index: 36;
+    padding: 0;
+}
+.circul {
+    border-radius: 50%;
+    background-color: rgb(81, 136, 135);
+    box-shadow: inset 0px 10px 30px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    width: 60px;
+    height: 60px;
+    z-index: 46;
+    /* margin: -42px 0px 0px 55px; */
+    margin: -42px 50px 0px 0px;
+}  
+.Box {
+    direction: rtl;
+    color: #62656b;
+    text-align: center;
+    font-family: thin, primary;
+    font-size: 11px;
+    margin: 5px 0px 0px 0px;
+}
+.button {
+    background-color: rgb(81, 136, 135);
+    box-shadow: inset 0px 10px 30px 0px rgba(0, 0, 0, 0.25);
+    width: 121px;
+    height: 34px;
+    border-radius: 24px;
+    /* margin: 6px 0px 0px 34px; */
+    margin: 6px 19px 0px 0px;
+}
+.co-button{
+    font-family: Thin, primary;
+    color: #fff;
+    text-align: center;
+    line-height: 26px
+}
+.border-img:hover .button,
+.border-img:hover .circul,
+.border-img:hover .Rectangle{
+    background: rgb(171, 154, 82);
+}
+
+img.lang{
+    width: 40px;
+    margin-top: 7px;
+}
+
+.lang {
+    color: rgb(171, 154, 82);
+    font-family: primary, arabic;
+    text-decoration: none;
+    padding: 0rem 1rem;
+    font-size: 1.5rem;
+    border-right: solid;
+    border-left: solid;
+    border-color: white;
+  }
+
+.phone-b{
+    padding: 1rem;
+    width: 14rem;
+    margin-top: 12rem;
+    margin-bottom: 5rem;
+}
+
+.border-img{
+    width: 12rem;
+    height: 10.25rem;
+    margin-top: 1rem;
+}
+.bor-mar{
+    margin-right: -12px;
+    width: 12rem;
+    height: 11rem;
+}
+
+.h-name-eng{
+    background-image: url(/styles/img/lang_img/en/h-name-eng.png);
+    width: 15rem;
+    height: 2.38rem;
+    margin: 1rem auto;
+}
+img.pho-icon{
+    margin: 5px 15px;
+    width: 28px;
+}
+.icon-img{
+    margin: 13px 13px;
+    width: 31px;
+}
+
+/* ========== Carusel ========== */
+.phone-b{
+    padding: 1rem;
+    width: 14rem;
+    margin-top: 12rem;
+    margin-bottom: 5rem;
+}
+@media (min-width: 650px) { 
+    .containerMobile {
+      display: none;
+    }
+  }
+  
+@media (max-width: 650px) { 
+    .containerDesktop {
+      display: none;
+    }
+    .phone-b{
+        padding: 1rem;
+        margin: 5rem auto 2rem auto;
+    }
+  }
+
+
+/* ========== Footer ============= */
+
+.logo_2_1{
+    width: 8rem;
+    margin-top: 4.5rem;
+}
+.bottom{
+    font-family: primary, arabic; 
+    padding:  1rem;
+    font-weight: bold;
+    color: #fff;
+    word-spacing: 3px;
+}
