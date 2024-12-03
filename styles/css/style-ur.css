@@ -1,3 +1,37 @@
+/* Preloader container */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #497e7d; /* Background color */
+    z-index: 9999; /* Ensure it's on top of other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Spinner animation */
+  .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #000; /* Change this color for customization */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  #preloader {
+    transition: opacity 0.5s ease;
+  }
+
 body{margin: 0px 0.1px;
 }
 
