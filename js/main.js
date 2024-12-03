@@ -152,7 +152,7 @@ languageSelect.addEventListener('change',async () => {
       "logo": "../styles/img/icons/logo-ltr.png",
       "six_manuscripts": "Six manuscripts of the Holy Qur'an in one application",
       "app_desc": "The first application in the Islamic world that combines characteristics and adventages that meet the needs of Muslims in terms of reading, memorizing, reviewing, interpreting, contemplating and listening",
-      "dedication": "Gifting Ayat Charity Association<br><br>",
+      "dedication": "Gifting Ayat Charity Association",
       "tafseer_title": "Interpretation",
       "tafseer_desc": "Interpretation of each verse by a group of interpretations<br><br>",
       "khtmata_title": "Alkhatmat",
