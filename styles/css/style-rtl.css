@@ -370,6 +370,9 @@ img.pho-icon{
     .containerMobile {
       display: none;
     }
+    .containerDesktop .text-center{
+        width: 100%;
+    }
   }
   
 @media (max-width: 650px) { 

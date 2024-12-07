@@ -231,11 +231,8 @@ function toggleArabicStylesheet(lang) {
 
   if (lang === 'ur') {
     stylesheet.href = 'styles/css/style-rtl.css';
-    htmlElement.lang = lang;
   } else {
     stylesheet.href = 'styles/css/styles.css';
-    htmlElement.lang = lang;
-    htmlElement.dir = 'ltr';
   }
   languageSelect.value = lang;
   if (lang === 'ar' || lang==='ur') {
