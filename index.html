@@ -25,6 +25,18 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@300&family=Noto+Kufi+Arabic:wght@900&family=Patrick+Hand&family=Ubuntu:ital,wght@1,500&display=swap"
       rel="stylesheet"
     />
+    <!-- prelaoder -->
+    <script>
+      window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.style.opacity = "0";
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 500); // Allow for fade-out effect
+  }
+});
+    </script>
 </head>
 <body>
     <!-- ========== Prelaoder ================ -->
@@ -43,6 +55,7 @@
                 <option value="ar">العربية</option>
               </select>
             </div>
+            <script src="js/main.js"></script>
           <div  class="col">
               <img data-i18n="logo" class="logo_app" src="styles/img/icons/logo-ltr.png"  alt="logo" />
           </div>
@@ -332,18 +345,5 @@
      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
      crossorigin="anonymous">
      </script>
-     <script src="js/main.js"></script>
-     <script>
-      window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  if (preloader) {
-    preloader.style.opacity = "0";
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 500); // Allow for fade-out effect
-  }
-});
-    </script>
-
 </body>
 </html>
