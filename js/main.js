@@ -1,103 +1,7 @@
-// const languageToggle = document.getElementById('language-toggle');
 const languageSelect = document.getElementById('language-toggle');
-const title = document.getElementById('title');
 
-window.addEventListener("DOMContentLoaded", async () => {
-  // Get the user's preferred language from the browser
-  const browserLanguage = navigator.language || navigator.userLanguage; // Get the browser's language
-  const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'ar'); // Default to Arabic if no preference is found
-  const langData = await fetchLanguageData(userPreferredLanguage);
-  updateContent(langData);
-  toggleArabicStylesheet(userPreferredLanguage);
-});
-
-// Function to fetch language data
-async function fetchLanguageData(lang) {
-  // const response = await fetch('assets/js/en.json');
-   //return response.json();
-   return languages[lang];
- }
- 
- // Function to set the language preference
- function setLanguagePreference(lang) {
-   localStorage.setItem("language", lang);
-   location.reload();
- }
- 
- // Function to update content based on selected language
- function updateContent(langData) {
-   document.querySelectorAll("[data-i18n]").forEach((element) => {
-     const key = element.getAttribute("data-i18n");
- 
-     if (element.tagName === "INPUT" && key === "placeholder_text") {
-       // If the element is an input with placeholder_text attribute, set placeholder
-       element.placeholder = langData[key];
-     }else if (element.tagName === 'IMG' ){
-      element.src= langData[key];
-     } else {
-       // For other elements, set text content
-       //element.textContent = langData[key];
-       
-      
-       element.innerHTML = langData[key];
-     }
-   });
-
-   }
- 
- // Function to change language
- async function changeLanguage(lang) {
-   await setLanguagePreference(lang);
-   const langData = await fetchLanguageData(lang);
-   updateContent(langData);
-   //
-   toggleArabicStylesheet(lang); // Toggle Arabic stylesheet
- }
- 
- // Function to toggle Arabic stylesheet based on language selection
- function toggleArabicStylesheet(lang) {
-  var stylesheet = document.getElementById('theme-stylesheet');
-      
-  if (lang === 'ur') {
-    stylesheet.href = 'styles/css/style-ur.css';  
-    document.documentElement.lang = 'ur'; 
-  } else {
-    stylesheet.href = 'styles/css/styles.css';  
-  }
-  languageSelect.value =lang;
-  const htmlElement = document.documentElement;
-  if (lang === 'ar' || lang==='ur') {
-      htmlElement.dir = 'rtl';
-  } else {
-      htmlElement.dir = 'ltr';
-  }
-  
- }
- 
- // Call updateContent() on page load
- window.addEventListener("DOMContentLoaded", async () => {
-   const userPreferredLanguage = localStorage.getItem("language") || "en";
-   const langData = await fetchLanguageData(userPreferredLanguage);
-   updateContent(langData);
-   toggleArabicStylesheet(userPreferredLanguage);
- 
- });
-
- 
-
-
- 
-languageSelect.addEventListener('change',async () => {
-    const selectedLanguage = languageSelect.value;
-    await setLanguagePreference(selectedLanguage);
-    const langData = await fetchLanguageData(selectedLanguage);
-    updateContent(langData);
-    toggleArabicStylesheet(lang);
-   
-  });
-
-
-  const languages = {
+// Language Data
+const languages = {
     "ar": {
       "title": "مصحف آيات",
       "description": "تطبيق يتيح مخطوطات من المصاحف المشهورة في العالم الإسلامي",
@@ -295,3 +199,74 @@ languageSelect.addEventListener('change',async () => {
       "copy_rights": "تمام حقوق محفوظ ہیں آیات فلاحی تنظیم کے نام 1446ہ - 2024م"
     }
   };
+
+// Function to fetch language data
+async function fetchLanguageData(lang) {
+  return languages[lang] || languages["en"]; // Fallback to English
+}
+
+// Function to set the language preference
+function setLanguagePreference(lang) {
+  localStorage.setItem("language", lang);
+}
+
+// Function to update content based on selected language
+function updateContent(langData) {
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+    if (element.tagName === "INPUT" && key === "placeholder_text") {
+      element.placeholder = langData[key];
+    } else if (element.tagName === 'IMG') {
+      element.src = langData[key];
+    } else {
+      element.innerHTML = langData[key] || "";
+    }
+  });
+}
+
+// Function to toggle Arabic stylesheet based on language selection
+function toggleArabicStylesheet(lang) {
+  const stylesheet = document.getElementById('theme-stylesheet');
+  const htmlElement = document.documentElement;
+
+  if (lang === 'ur') {
+    stylesheet.href = 'styles/css/style-rtl.css';
+    htmlElement.lang = lang;
+  } else {
+    stylesheet.href = 'styles/css/styles.css';
+    htmlElement.lang = lang;
+    htmlElement.dir = 'ltr';
+  }
+  languageSelect.value = lang;
+  if (lang === 'ar' || lang==='ur') {
+    htmlElement.dir = 'rtl';
+} else {
+    htmlElement.dir = 'ltr';
+}
+}
+
+
+  
+
+// Function to handle language change
+async function changeLanguage(lang) {
+  setLanguagePreference(lang);
+  const langData = await fetchLanguageData(lang);
+  updateContent(langData);
+  toggleArabicStylesheet(lang);
+}
+
+// Initialize page content based on user preference or browser settings
+window.addEventListener("DOMContentLoaded", async () => {
+  const browserLanguage = navigator.language || navigator.userLanguage;
+  const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'en');
+  const langData = await fetchLanguageData(userPreferredLanguage);
+  updateContent(langData);
+  toggleArabicStylesheet(userPreferredLanguage);
+});
+
+// Add event listener for language selection
+languageSelect.addEventListener('change', async (event) => {
+  const selectedLanguage = event.target.value;
+  await changeLanguage(selectedLanguage);
+});
