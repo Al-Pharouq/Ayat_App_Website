@@ -1,3 +1,14 @@
+window.addEventListener("load", () => {
+const preloader = document.getElementById("preloader");
+if (preloader) {
+preloader.style.opacity = "0";
+setTimeout(() => {
+preloader.style.display = "none";
+}, 500); // Allow for fade-out effect
+}
+});
+
+
 const languageSelect = document.getElementById('language-toggle');
 
 // Language Data
@@ -263,18 +274,18 @@ languageSelect.addEventListener('change', async (event) => {
   await changeLanguage(selectedLanguage);
 });
 
-let items = document.querySelectorAll('.carousel .carousel-item')
+// let items = document.querySelectorAll('.carousel .carousel-item')
 
-items.forEach((el) => {
-    const minPerSlide = 4
-    let next = el.nextElementSibling
-    for (var i=1; i<minPerSlide; i++) {
-        if (!next) {
-            // wrap carousel by using first child
-        	next = items[0]
-      	}
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
-    }
-})
+// items.forEach((el) => {
+//     const minPerSlide = 4
+//     let next = el.nextElementSibling
+//     for (var i=1; i<minPerSlide; i++) {
+//         if (!next) {
+//             // wrap carousel by using first child
+//         	next = items[0]
+//       	}
+//         let cloneChild = next.cloneNode(true)
+//         el.appendChild(cloneChild.children[0])
+//         next = next.nextElementSibling
+//     }
+// })
