@@ -1,3 +1,14 @@
+window.addEventListener("load", () => {
+const preloader = document.getElementById("preloader");
+if (preloader) {
+preloader.style.opacity = "0";
+setTimeout(() => {
+preloader.style.display = "none";
+}, 500); // Allow for fade-out effect
+}
+});
+
+
 const languageSelect = document.getElementById('language-toggle');
 
 // Language Data
@@ -5,14 +16,13 @@ const languages = {
     "ar": {
       "title": "مصحف آيات",
       "description": "تطبيق يتيح مخطوطات من المصاحف المشهورة في العالم الإسلامي",
-      "h-name":"  <div class='h-name'></div>",
-      "phone1": "assets/image/languages/ar/2.jpg",
-      "phone2": "assets/image/languages/ar/3.jpg",
-      "phone3": "assets/image/languages/ar/4.jpg",
-      "phone4": "assets/image/languages/ar/5.jpg",
-      "phone5": "assets/image/languages/ar/6.jpg",
-      "phone6": "assets/image/languages/ar/7.jpg",
-      "phone-a": "assets/image/languages/ar/1.jpg",
+      "h-name":"  <div class='h-name-ar'></div>",
+      "phone1": "styles/img/lang_img/ar/dark_theme.png",
+      "phone2": "styles/img/lang_img/ar/quran_recordings.png",
+      "phone3": "styles/img/lang_img/ar/bookmark.png",
+      "phone4": "styles/img/lang_img/ar/search.png",
+      "phone5": "styles/img/lang_img/ar/quran_version.png",
+      "phone-front": "styles/img/lang_img/ar/quran_calig.png",
       "logo": "styles/img/icons/logo.png",
       
       "six_manuscripts": "سـت مخطوطات من المصحــف الشريف في تطبيق واحد",
@@ -46,13 +56,12 @@ const languages = {
       "title": "Mushaf Ayat",
       "description": "A Platform Providing Manuscripts of Famous Mushafs from the Islamic World ",
       "h-name":"  <div class='h-name-eng'></div>",
-      "phone1": "assets/image/languages/en/2.jpg",
-      "phone2": "assets/image/languages/en/3.jpg",
-      "phone3": "assets/image/languages/en/4.jpg",
-      "phone4": "assets/image/languages/en/5.jpg",
-      "phone5": "assets/image/languages/en/6.jpg",
-      "phone6": "assets/image/languages/en/7.jpg",
-      "phone-a": "assets/image/languages/en/1.jpg",
+      "phone1": "styles/img/lang_img/en/dark_theme.png",
+      "phone2": "styles/img/lang_img/en/recordings.png",
+      "phone3": "styles/img/lang_img/en/bookmark.png",
+      "phone4": "styles/img/lang_img/en/search.png",
+      "phone5": "styles/img/lang_img/en/quran_version.png",
+      "phone-front": "styles/img/lang_img/en/quran_calig.png", 
       "logo": "styles/img/icons/logo-ltr.png",
       "six_manuscripts": "Six manuscripts of the Holy Qur'an in one application",
       "app_desc": "The first application in the Islamic world that combines characteristics and adventages that meet the needs of Muslims in terms of reading, memorizing, reviewing, interpreting, contemplating and listening",
@@ -84,14 +93,13 @@ const languages = {
     "fr": {
       "title": "Mushaf Ayat",
       "description": "Une application offrant des manuscrits de célèbres Mushafs du monde islamique",
-      "h-name":"  <div class='h-name-eng'></div>",
-      "phone1": "assets/image/languages/fr/2.jpg",
-      "phone2": "assets/image/languages/fr/3.jpg",
-      "phone3": "assets/image/languages/fr/4.jpg",
-      "phone4": "assets/image/languages/fr/5.jpg",
-      "phone5": "assets/image/languages/fr/6.jpg",
-      "phone6": "assets/image/languages/fr/7.jpg",
-      "phone-a": "assets/image/languages/fr/1.jpg",
+      "h-name":"  <div class='h-name-fr'></div>",
+      "phone1": "styles/img/lang_img/fr/dark_theme.png",
+      "phone2": "styles/img/lang_img/fr/recordings.png",
+      "phone3": "styles/img/lang_img/fr/bookmark.png",
+      "phone4": "styles/img/lang_img/fr/search.png",
+      "phone5": "styles/img/lang_img/fr/quran_version.png",
+      "phone-front": "styles/img/lang_img/fr/quran_calig.png",
       "logo": "styles/img/icons/logo-ltr.png",
       "six_manuscripts": "Six manuscrits du Saint Coran en une seule application",
       "app_desc": "La première application dans le monde islamique qui combine des fonctionnalités qui répondent aux besoins des musulmans de lire, mémorisation, révision, interpréter, méditation et écouter",
@@ -124,14 +132,13 @@ const languages = {
       "title": "Mushaf Ayat",
       "description": "Una aplicación que ofrece manuscritos de Mushafes famosos del mundo islámico",
       "six_manuscripts": "Seis manuscritos del Sagrado Corán en una sola aplicación",
-      "h-name":"  <div class='h-name-eng'></div>",
-      "phone1": "assets/image/languages/es/2.jpg",
-      "phone2": "assets/image/languages/es/3.jpg",
-      "phone3": "assets/image/languages/es/4.jpg",
-      "phone4": "assets/image/languages/es/5.jpg",
-      "phone5": "assets/image/languages/es/6.jpg",
-      "phone6": "assets/image/languages/es/7.jpg",
-      "phone-a": "assets/image/languages/es/1.jpg",
+      "h-name":"  <div class='h-name-es'></div>",
+      "phone1": "styles/img/lang_img/es/dark_theme.png",
+      "phone2": "styles/img/lang_img/es/recordings.png",
+      "phone3": "styles/img/lang_img/es/bookmark.png",
+      "phone4": "styles/img/lang_img/es/search.png",
+      "phone5": "styles/img/lang_img/es/quran_versions.png",
+      "phone-front": "styles/img/lang_img/es/quran_calig.png",
       "logo": "styles/img/icons/logo-ltr.png",
       "app_desc": "La primera aplicación en el mundo islámico que combina características y beneficios que satisfacen las necesidades del musulmán, como: lectura, memorización, repaso, interpretación, reflexión y escucha.",
       "dedication": "Dedicatoria a la Asociación Ayat benéfica",
@@ -162,14 +169,13 @@ const languages = {
     "ur": {
       "title": "مصحف آيات",
       "description": "ایک ایپلیکیشن جو اسلامی دنیا کے مشہور مصحف کے مخطوطات فراہم کرتی ہے",
-      "h-name":"  <div class='h-name'></div>",
-      "phone1": "assets/image/languages/ur/2.jpg",
-      "phone2": "assets/image/languages/ur/3.jpg",
-      "phone3": "assets/image/languages/ur/4.jpg",
-      "phone4": "assets/image/languages/ur/5.jpg",
-      "phone5": "assets/image/languages/ur/6.jpg",
-      "phone6": "assets/image/languages/ur/7.jpg",
-      "phone-a": "assets/image/languages/ur/1.jpg",
+      "h-name":"  <div class='h-name-ur'></div>",
+      "phone1": "styles/img/lang_img/ur/dark_theme.png",
+      "phone2": "styles/img/lang_img/ur/recordings.png",
+      "phone3": "styles/img/lang_img/ur/bookmark.png",
+      "phone4": "styles/img/lang_img/ur/search.png",
+      "phone5": "styles/img/lang_img/ur/quran_versions.png",
+      "phone-front": "styles/img/lang_img/ur/quran_calig.png",
       "logo": "styles/img/icons/logo.png",
       "six_manuscripts": "ایک ایپ میں چھ قرآنی مخطوطات",
       "app_desc": "دنیا کی پہلی اسلامی ایپ جو مسلمان کی ضروریات کو پورا کرنے والی خصوصیات اور خصوصیات کو یکجا کرتی ہے: تلاوت، حفظ، تجدید، تفسیر، تدبر اور سننا۔",
@@ -267,3 +273,19 @@ languageSelect.addEventListener('change', async (event) => {
   const selectedLanguage = event.target.value;
   await changeLanguage(selectedLanguage);
 });
+
+let items = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 4
+    let next = el.nextElementSibling
+    for (var i=1; i<minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+        	next = items[0]
+      	}
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
