@@ -329,24 +329,24 @@ async function changeLanguage(lang) {
   toggleArabicStylesheet(lang);
 }
 
-// Initialize page content based on user preference or browser settings
-window.addEventListener("DOMContentLoaded", async () => {
-  const browserLanguage = navigator.language || navigator.userLanguage;
-  const userPreferredLanguage = localStorage.getItem("language") || "en"; // Default to English
-  const langData = await fetchLanguageData(userPreferredLanguage);
-  console.log("Language Data:", langData);
-  updateContent(langData); // Update content immediately
-  toggleArabicStylesheet(userPreferredLanguage); // Ensure stylesheet matches the default language
-});
-
-
-// // Initialize page content to always load in English
+// // Initialize page content based on user preference or browser settings
 // window.addEventListener("DOMContentLoaded", async () => {
-//   const defaultLanguage = "en"; // Always default to English
-//   const langData = await fetchLanguageData(defaultLanguage);
-//   updateContent(langData); // Update content to English immediately
-//   toggleArabicStylesheet(defaultLanguage); // Ensure the stylesheet matches the default language
+//   const browserLanguage = navigator.language || navigator.userLanguage;
+//   const userPreferredLanguage = localStorage.getItem("language") || "en"; // Default to English
+//   const langData = await fetchLanguageData(userPreferredLanguage);
+//   console.log("Language Data:", langData);
+//   updateContent(langData); // Update content immediately
+//   toggleArabicStylesheet(userPreferredLanguage); // Ensure stylesheet matches the default language
 // });
+
+
+// Initialize page content to always load in English
+window.addEventListener("DOMContentLoaded", async () => {
+  const defaultLanguage = "en"; // Always default to English
+  const langData = await fetchLanguageData(defaultLanguage);
+  updateContent(langData); // Update content to English immediately
+  toggleArabicStylesheet(defaultLanguage); // Ensure the stylesheet matches the default language
+});
 
 
 // Add event listener for language selection
