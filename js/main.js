@@ -206,9 +206,15 @@ const languages = {
     }
   };
 
-// Function to fetch language data
+// // Function to fetch language data
+// async function fetchLanguageData(lang) {
+//   return languages[lang] || languages["en"]; // Fallback to English
+// }
+
+
+// Fetch the language data based on the language code
 async function fetchLanguageData(lang) {
-  return languages[lang] || languages["en"]; // Fallback to English
+  return languages[lang] || languages["en"];
 }
 
 // Function to set the language preference
@@ -216,13 +222,27 @@ function setLanguagePreference(lang) {
   localStorage.setItem("language", lang);
 }
 
-// Function to update content based on selected language
+// // Function to update content based on selected language
+// function updateContent(langData) {
+//   document.querySelectorAll("[data-i18n]").forEach((element) => {
+//     const key = element.getAttribute("data-i18n");
+//     if (element.tagName === "INPUT" && key === "placeholder_text") {
+//       element.placeholder = langData[key];
+//     } else if (element.tagName === 'IMG') {
+//       element.src = langData[key];
+//     } else {
+//       element.innerHTML = langData[key] || "";
+//     }
+//   });
+// }
+
+// Update the page content based on the selected language
 function updateContent(langData) {
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
     if (element.tagName === "INPUT" && key === "placeholder_text") {
       element.placeholder = langData[key];
-    } else if (element.tagName === 'IMG') {
+    } else if (element.tagName === "IMG") {
       element.src = langData[key];
     } else {
       element.innerHTML = langData[key] || "";
@@ -259,12 +279,28 @@ async function changeLanguage(lang) {
   toggleArabicStylesheet(lang);
 }
 
+// window.addEventListener("DOMContentLoaded", async () => {
+//   const browserLanguage = navigator.language || navigator.userLanguage;
+//   const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'en');
+  
+//   // Fallback to 'en' explicitly if an invalid language is detected
+//   const chosenLanguage = ['ar', 'en'].includes(userPreferredLanguage) ? userPreferredLanguage : 'en';
+
+//   const langData = await fetchLanguageData(chosenLanguage);
+//   updateContent(langData);
+//   toggleArabicStylesheet(chosenLanguage);
+// });
+
+
+// Initialize the page with the correct language on load
 window.addEventListener("DOMContentLoaded", async () => {
   const browserLanguage = navigator.language || navigator.userLanguage;
-  const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'en');
-  
-  // Fallback to 'en' explicitly if an invalid language is detected
-  const chosenLanguage = ['ar', 'en'].includes(userPreferredLanguage) ? userPreferredLanguage : 'en';
+  const userPreferredLanguage = localStorage.getItem("language") || "en";
+
+  // Ensure the language is valid; fallback to 'en' otherwise
+  const chosenLanguage = Object.keys(languages).includes(userPreferredLanguage)
+    ? userPreferredLanguage
+    : "en";
 
   const langData = await fetchLanguageData(chosenLanguage);
   updateContent(langData);
