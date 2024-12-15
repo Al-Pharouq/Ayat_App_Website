@@ -1,14 +1,3 @@
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  if (preloader) {
-  preloader.style.opacity = "0";
-  setTimeout(() => {
-  preloader.style.display = "none";
-  }, 500); // Allow for fade-out effect
-  }
-  });
-  
-  
   const languageSelect = document.getElementById('language-toggle');
   
   // Language Data
@@ -179,7 +168,7 @@ window.addEventListener("load", () => {
         "logo": "styles/img/icons/logo.png",
         "six_manuscripts": "ایک ایپ میں چھ قرآنی مخطوطات",
         "app_desc": "دنیا کی پہلی اسلامی ایپ جو مسلمان کی ضروریات کو پورا کرنے والی خصوصیات اور خصوصیات کو یکجا کرتی ہے: تلاوت، حفظ، تجدید، تفسیر، تدبر اور سننا۔",
-        "dedication": "آیات فلاحی تنظیم کی طرف سے پیشکش",
+        "dedication": "آیات فلاحی تنظیم کی طر ف سے پیشکش",
         "tafseer_title": "تفسیر",
         "tafseer_desc": "ہر آیت کی تفسیر کو مختلف تفاسیر کے ذریعے قاری کے ساتھ جوڑنا",
         "khtmata_title": "ختمات",
@@ -260,15 +249,9 @@ window.addEventListener("load", () => {
   }
   
   window.addEventListener("DOMContentLoaded", async () => {
-    const browserLanguage = navigator.language || navigator.userLanguage;
-    const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'en');
-    
-    // Fallback to 'en' explicitly if an invalid language is detected
-    const chosenLanguage = ['ar', 'en'].includes(userPreferredLanguage) ? userPreferredLanguage : 'en';
-  
-    const langData = await fetchLanguageData(chosenLanguage);
+    const langData = await fetchLanguageData('en');
     updateContent(langData);
-    toggleArabicStylesheet(chosenLanguage);
+    toggleArabicStylesheet('en');
   });
   
   
@@ -303,3 +286,13 @@ window.addEventListener("load", () => {
       }
   })
   
+  // <!-- prelaoder -->
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
+    preloader.style.opacity = "0";
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 500); // Allow for fade-out effect
+    }
+    });
