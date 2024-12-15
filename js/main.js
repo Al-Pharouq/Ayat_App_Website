@@ -323,6 +323,15 @@ function toggleArabicStylesheet(lang) {
 
 // Function to handle language change
 async function changeLanguage(lang) {
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
+    preloader.style.opacity = "0";
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 500); // Allow for fade-out effect
+    }
+    });
   setLanguagePreference(lang);
   const langData = await fetchLanguageData(lang);
   updateContent(langData);
@@ -347,7 +356,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   updateContent(langData); // Update content to English immediately
   toggleArabicStylesheet(defaultLanguage); // Ensure the stylesheet matches the default language
 });
-
 
 // Add event listener for language selection
 languageSelect.addEventListener('change', async (event) => {
