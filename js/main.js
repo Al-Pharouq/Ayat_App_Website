@@ -259,14 +259,27 @@ async function changeLanguage(lang) {
   toggleArabicStylesheet(lang);
 }
 
-// Initialize page content based on user preference or browser settings
 window.addEventListener("DOMContentLoaded", async () => {
   const browserLanguage = navigator.language || navigator.userLanguage;
   const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'en');
-  const langData = await fetchLanguageData(userPreferredLanguage);
+  
+  // Fallback to 'en' explicitly if an invalid language is detected
+  const chosenLanguage = ['ar', 'en'].includes(userPreferredLanguage) ? userPreferredLanguage : 'en';
+
+  const langData = await fetchLanguageData(chosenLanguage);
   updateContent(langData);
-  toggleArabicStylesheet(userPreferredLanguage);
+  toggleArabicStylesheet(chosenLanguage);
 });
+
+
+// // Initialize page content based on user preference or browser settings
+// window.addEventListener("DOMContentLoaded", async () => {
+//   const browserLanguage = navigator.language || navigator.userLanguage;
+//   const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'en');
+//   const langData = await fetchLanguageData(userPreferredLanguage);
+//   updateContent(langData);
+//   toggleArabicStylesheet(userPreferredLanguage);
+// });
 
 // Add event listener for language selection
 languageSelect.addEventListener('change', async (event) => {
