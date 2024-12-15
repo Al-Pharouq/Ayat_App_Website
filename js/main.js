@@ -329,27 +329,15 @@ async function changeLanguage(lang) {
   toggleArabicStylesheet(lang);
 }
 
-// 
-
 // Initialize page content based on user preference or browser settings
 window.addEventListener("DOMContentLoaded", async () => {
-  const hasReloaded = localStorage.getItem("hasReloaded");
-
-  // Check if the page has been reloaded before
-  if (!hasReloaded) {
-    localStorage.setItem("hasReloaded", "true"); // Set flag to indicate reload has occurred
-    window.location.reload(); // Reload the page
-    return; // Prevent further execution on this first load
-  }
-
-  // Fetch language and initialize the content
   const browserLanguage = navigator.language || navigator.userLanguage;
   const userPreferredLanguage = localStorage.getItem("language") || "en"; // Default to English
   const langData = await fetchLanguageData(userPreferredLanguage);
+  console.log("Language Data:", langData);
   updateContent(langData); // Update content immediately
   toggleArabicStylesheet(userPreferredLanguage); // Ensure stylesheet matches the default language
 });
-
 
 
 // // Initialize page content to always load in English
