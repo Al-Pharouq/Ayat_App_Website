@@ -1,14 +1,3 @@
-window.addEventListener("load", () => {
-const preloader = document.getElementById("preloader");
-if (preloader) {
-preloader.style.opacity = "0";
-setTimeout(() => {
-preloader.style.display = "none";
-}, 500); // Allow for fade-out effect
-}
-});
-
-
 const languageSelect = document.getElementById('language-toggle');
 
 // Language Data
@@ -211,16 +200,10 @@ const languages = {
 //   return languages[lang] || languages["en"]; // Fallback to English
 // }
 
-
-// Fetch the language data based on the language code
-async function fetchLanguageData(lang) {
-  return languages[lang] || languages["en"];
-}
-
-// Function to set the language preference
-function setLanguagePreference(lang) {
-  localStorage.setItem("language", lang);
-}
+// // Function to set the language preference
+// function setLanguagePreference(lang) {
+//   localStorage.setItem("language", lang);
+// }
 
 // // Function to update content based on selected language
 // function updateContent(langData) {
@@ -236,13 +219,68 @@ function setLanguagePreference(lang) {
 //   });
 // }
 
-// Update the page content based on the selected language
+// // Function to toggle Arabic stylesheet based on language selection
+// function toggleArabicStylesheet(lang) {
+//   const stylesheet = document.getElementById('theme-stylesheet');
+//   const htmlElement = document.documentElement;
+
+//   if (lang === 'ur') {
+//     stylesheet.href = 'styles/css/style-rtl.css';
+//   } else {
+//     stylesheet.href = 'styles/css/styles.css';
+//   }
+//   languageSelect.value = lang;
+//   if (lang === 'ar' || lang==='ur') {
+//     htmlElement.dir = 'rtl';
+// } else {
+//     htmlElement.dir = 'ltr';
+// }
+// }
+
+
+  
+
+// // Function to handle language change
+// async function changeLanguage(lang) {
+//   setLanguagePreference(lang);
+//   const langData = await fetchLanguageData(lang);
+//   updateContent(langData);
+//   toggleArabicStylesheet(lang);
+// }
+
+// // Initialize page content based on user preference or browser settings
+// window.addEventListener("DOMContentLoaded", async () => {
+//   const browserLanguage = navigator.language || navigator.userLanguage;
+//   const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'en');
+//   const langData = await fetchLanguageData(userPreferredLanguage);
+//   updateContent(langData);
+//   toggleArabicStylesheet(userPreferredLanguage);
+// });
+
+// // Add event listener for language selection
+// languageSelect.addEventListener('change', async (event) => {
+//   const selectedLanguage = event.target.value;
+//   await changeLanguage(selectedLanguage);
+// });
+
+
+// Function to fetch language data
+async function fetchLanguageData(lang) {
+  return languages[lang] || languages["en"]; // Fallback to English
+}
+
+// Function to set the language preference
+function setLanguagePreference(lang) {
+  localStorage.setItem("language", lang);
+}
+
+// Function to update content based on selected language
 function updateContent(langData) {
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
     if (element.tagName === "INPUT" && key === "placeholder_text") {
       element.placeholder = langData[key];
-    } else if (element.tagName === "IMG") {
+    } else if (element.tagName === 'IMG') {
       element.src = langData[key];
     } else {
       element.innerHTML = langData[key] || "";
@@ -268,8 +306,20 @@ function toggleArabicStylesheet(lang) {
 }
 }
 
+// // Function to toggle Arabic stylesheet based on language selection
+// function toggleArabicStylesheet(lang) {
+//   const stylesheet = document.getElementById('theme-stylesheet');
+//   const htmlElement = document.documentElement;
 
-  
+//   if (lang === 'ar' || lang === 'ur') {
+//     stylesheet.href = 'styles/css/style-rtl.css';
+//     htmlElement.dir = 'rtl';
+//   } else {
+//     stylesheet.href = 'styles/css/styles.css';
+//     htmlElement.dir = 'ltr';
+//   }
+//   languageSelect.value = lang;
+// }
 
 // Function to handle language change
 async function changeLanguage(lang) {
@@ -279,49 +329,22 @@ async function changeLanguage(lang) {
   toggleArabicStylesheet(lang);
 }
 
-// window.addEventListener("DOMContentLoaded", async () => {
-//   const browserLanguage = navigator.language || navigator.userLanguage;
-//   const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'en');
-  
-//   // Fallback to 'en' explicitly if an invalid language is detected
-//   const chosenLanguage = ['ar', 'en'].includes(userPreferredLanguage) ? userPreferredLanguage : 'en';
-
-//   const langData = await fetchLanguageData(chosenLanguage);
-//   updateContent(langData);
-//   toggleArabicStylesheet(chosenLanguage);
-// });
-
-
-// Initialize the page with the correct language on load
+// Initialize page content based on user preference or browser settings
 window.addEventListener("DOMContentLoaded", async () => {
   const browserLanguage = navigator.language || navigator.userLanguage;
-  const userPreferredLanguage = localStorage.getItem("language") || "en";
-
-  // Ensure the language is valid; fallback to 'en' otherwise
-  const chosenLanguage = Object.keys(languages).includes(userPreferredLanguage)
-    ? userPreferredLanguage
-    : "en";
-
-  const langData = await fetchLanguageData(chosenLanguage);
-  updateContent(langData);
-  toggleArabicStylesheet(chosenLanguage);
+  const userPreferredLanguage = localStorage.getItem("language") || "en"; // Default to English
+  const langData = await fetchLanguageData(userPreferredLanguage);
+  
+  updateContent(langData); // Update content immediately
+  toggleArabicStylesheet(userPreferredLanguage); // Ensure stylesheet matches the default language
 });
-
-
-// // Initialize page content based on user preference or browser settings
-// window.addEventListener("DOMContentLoaded", async () => {
-//   const browserLanguage = navigator.language || navigator.userLanguage;
-//   const userPreferredLanguage = localStorage.getItem("language") || (browserLanguage.startsWith('ar') ? 'ar' : 'en');
-//   const langData = await fetchLanguageData(userPreferredLanguage);
-//   updateContent(langData);
-//   toggleArabicStylesheet(userPreferredLanguage);
-// });
 
 // Add event listener for language selection
 languageSelect.addEventListener('change', async (event) => {
   const selectedLanguage = event.target.value;
   await changeLanguage(selectedLanguage);
 });
+
 
 let items = document.querySelectorAll('.carousel .carousel-item')
 
