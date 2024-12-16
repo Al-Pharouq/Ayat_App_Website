@@ -1,22 +1,38 @@
 // Get the language select element
 var languageSelect = document.getElementById("language-toggle");
 
+// Get the preloader and content elements
+var loadingIndicator = document.getElementById("preloader");
+var contentContainer = document.getElementById("content");
+
+// Function to display the content and hide the loading indicator
+function showContent() {
+  document.getElementById("content").style.display = "block";
+  document.getElementById("preloader").style.display = "none";
+}
+
 // Function to load a language JSON file
 function loadLanguage(lang) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET","js/content/"+ lang + ".json", true);
   xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      try {
-        var content = JSON.parse(xhr.responseText);
-        applyLanguage(content);
-        toggleArabicStylesheet(lang)
-      } catch (e) {
-        console.error("Error parsing JSON for language", lang, e);
-      }
+    if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+            try {
+                var content = JSON.parse(xhr.responseText);
+                applyLanguage(content);
+                toggleArabicStylesheet(lang)
+                showContent();
+            } catch (e) {
+                console.error("Error parsing JSON for language", lang, e);
+            }
+        } else {
+            console.error("Error loading language file:", xhr.status);
+            showContent(); // Show the content even if there's an error
+        }
     }
-  };
-  xhr.send();
+};
+xhr.send();
 }
 
 
@@ -102,14 +118,3 @@ languageSelect.addEventListener("change", function () {
           next = next.nextElementSibling
       }
   })
-
-    // <!-- prelaoder -->
-    window.addEventListener("load", () => {
-      const preloader = document.getElementById("preloader");
-      if (preloader) {
-      preloader.style.opacity = "0";
-      setTimeout(() => {
-        preloader.style.display = "none";
-      }, 500); // Allow for fade-out effect
-      }
-      });
