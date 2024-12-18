@@ -104,6 +104,7 @@ languageSelect.addEventListener("change", function () {
           el.appendChild(cloneChild.children[0])
           next = next.nextElementSibling
       }
+    });
   
 // <!-- prelaoder -->
 window.addEventListener("load", () => {
