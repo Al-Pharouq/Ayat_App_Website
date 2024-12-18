@@ -51,19 +51,6 @@ function applyLanguage(langData) {
   });
 }
 
-// function updateContent(langData) {
-//   document.querySelectorAll("[data-i18n]").forEach((element) => {
-//     const key = element.getAttribute("data-i18n");
-//     if (element.tagName === "INPUT" && key === "placeholder_text") {
-//       element.placeholder = langData[key];
-//     } else if (element.tagName === 'IMG') {
-//       element.src = langData[key];
-//     } else {
-//       element.innerHTML = langData[key] || "";
-//     }
-//   });
-// }
-
 // Function to toggle Arabic stylesheet based on language selection
 function toggleArabicStylesheet(lang) {
   const stylesheet = document.getElementById('theme-stylesheet');

@@ -348,6 +348,29 @@ img.lang{
     height: 2.38rem;
     margin: 1rem auto;
 }
+
+.h-name-fr{
+    background-image: url(../img/lang_img/fr/h-name-eng.png);
+    width: 15rem;
+    height: 2.38rem;
+    margin: 1rem auto;
+}
+
+.h-name-ar{
+    background-image: url(../img/lang_img/ar/h-name.png);
+    width: 15rem;
+    height: 6.38rem;
+    margin: 1rem auto;
+    background-repeat: no-repeat;
+}
+
+.h-name-es{
+    background-image: url(../img/lang_img/es/h-name-eng.png);
+    width: 15rem;
+    height: 2.38rem;
+    margin: 1rem auto;
+}
+
 img.pho-icon{
     margin: 5px 15px;
     width: 28px;
@@ -418,12 +441,32 @@ img.pho-icon{
     .carousel-inner .carousel-item-prev {
       transform: translateX(-25%);
     }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5%; /* Adjust width as needed */
+        z-index: 15; /* Ensure controls are above other elements */
+    }
+
+    .carousel-control-prev {
+        left: -30px; /* Adjust this value to move the left arrow further out */
+    }
+
+    .carousel-control-next {
+        right: -30px; /* Adjust this value to move the right arrow further out */
+    }
+
   }
   
   .carousel-inner .carousel-item-end,
   .carousel-inner .carousel-item-start { 
   transform: translateX(0);
   }
+
+  
   
 /* ========== Footer ============= */
 
