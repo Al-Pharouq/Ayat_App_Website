@@ -92,6 +92,7 @@
     background-size: cover;
     /* height: 119vh; */
     padding: 0% 8%;
+    padding-bottom: 2rem;
 }
 .service{
     background-image:url(../img/icons/middle-section-1.png);
@@ -131,8 +132,14 @@
 }
 
 .hero_img{
-    width: 24rem;
-    /* padding-top: 2rem; */
+    width: 25rem;
+}
+
+@media screen and (max-width: 570px) {
+    .hero_img {
+        width: -webkit-fill-available;
+        margin-top: 3rem;
+    }
 }
 
 header h1{
@@ -166,6 +173,7 @@ header h4{
     background-repeat: no-repeat;
     text-decoration: none;
     border-radius: 10px;
+    margin-bottom: 0.3rem;
 }
 .market-button-title {
     color: #222;
@@ -300,7 +308,7 @@ header h4{
     font-family: Thin, primary;
     color: #fff;
     text-align: center;
-    line-height: 26px
+    line-height: 1.8rem
 }
 .border-img:hover .button,
 .border-img:hover .circul,
